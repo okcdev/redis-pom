@@ -4,13 +4,11 @@
  * Date: 2018-11-17
  */
 
-import cn.feng.dev.customer1.entity.SysUser;
-import cn.feng.dev.customer1.service.UserService;
+import cn.feng.dev.customer1.service.CustomerService;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestComponent;
 
 
 /**
@@ -20,7 +18,7 @@ public class test {
     static Logger logger = LoggerFactory.getLogger(test.class);
 
     @Autowired
-    UserService userService;
+    CustomerService userService;
 
     @Test
     public void setUser(){

@@ -9,7 +9,8 @@
     <modules>
         <module>redis-utils</module>
 		<module>customer1</module>
-	</modules>
+        <module>customer2</module>
+    </modules>
     <packaging>pom</packaging>
 
 	<name>redis-pom</name>

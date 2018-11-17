@@ -1,0 +1,5 @@
+cn\feng\dev\customer2\Application.class
+cn\feng\dev\customer2\entity\Customer2.class
+cn\feng\dev\customer2\service\Customer2Service.class
+cn\feng\dev\customer2\utils\Customer2BasicRedisUtils.class
+cn\feng\dev\customer2\web\Controller.class
