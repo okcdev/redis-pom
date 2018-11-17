@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.feng.dev</groupId>
-	<artifactId>example</artifactId>
+	<artifactId>redis-pom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>redis-utils</module>
@@ -12,7 +12,7 @@
 	</modules>
     <packaging>pom</packaging>
 
-	<name>example</name>
+	<name>redis-pom</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
