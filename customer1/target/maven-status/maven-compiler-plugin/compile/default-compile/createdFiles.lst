@@ -1,6 +1,6 @@
-cn\feng\dev\customer1\utils\Customer1BasicRedisUtils.class
 cn\feng\dev\customer1\web\Controller.class
 cn\feng\dev\customer1\service\CustomerService.class
+cn\feng\dev\customer1\utils\Customer1BasicRedisService.class
 cn\feng\dev\customer1\config\MyBeanConfig.class
 cn\feng\dev\customer1\Application.class
 cn\feng\dev\customer1\entity\Customer1.class

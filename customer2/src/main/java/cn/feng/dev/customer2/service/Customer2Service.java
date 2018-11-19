@@ -7,7 +7,7 @@
 package cn.feng.dev.customer2.service;
 
 import cn.feng.dev.customer2.entity.Customer2;
-import cn.feng.dev.customer2.utils.Customer2BasicRedisUtils;
+import cn.feng.dev.customer2.utils.Customer2BasicRedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,15 @@ public class Customer2Service {
     static Logger logger = LoggerFactory.getLogger(Customer2Service.class);
 
     @Autowired
-    Customer2BasicRedisUtils customer2BasicRedisUtils;
+    Customer2BasicRedisService customer2BasicRedisUtils;
 
     public Customer2 setCustomer2(String key, Customer2 customer2){
         customer2BasicRedisUtils.setValueWithExpire(key, customer2, 180);
         customer2.setKey(key);
         return customer2;
+    }
+
+    public Customer2 getCustomer2(String key){
+        return customer2BasicRedisUtils.getValue(key);
     }
 }

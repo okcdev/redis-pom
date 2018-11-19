@@ -34,4 +34,9 @@ public class Controller {
         customer2.setScore("35");
         return customer2Service.setCustomer2(key, customer2);
     }
+
+    @RequestMapping("/get/{key}")
+    public Customer2 getCustomer2(@PathVariable("key") String key){
+        return customer2Service.getCustomer2(key);
+    }
 }

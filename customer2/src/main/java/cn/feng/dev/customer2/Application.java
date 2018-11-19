@@ -14,7 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author fengtao.xue
- */@SpringBootApplication(scanBasePackages = "cn.feng.dev")
+ */
+@SpringBootApplication(scanBasePackages ="cn.feng.dev")
 public class Application {
     static Logger logger = LoggerFactory.getLogger(Application.class);
 

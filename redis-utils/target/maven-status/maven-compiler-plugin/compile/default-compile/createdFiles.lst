@@ -1,2 +1,2 @@
-cn\feng\dev\redis\utils\BasicRedisUtils.class
+cn\feng\dev\redis\service\BasicRedisService.class
 cn\feng\dev\redis\config\RedisConfig.class

@@ -1,7 +1,7 @@
-E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\service\FactoryBean.java
-E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\utils\Customer1BasicRedisUtils.java
+E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\service\MyFactoryBeans.java
 E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\service\CustomerService.java
 E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\entity\Customer1.java
+E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\utils\Customer1BasicRedisService.java
 E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\web\Controller.java
 E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\config\MyBeanConfig.java
 E:\gsc-dev\08-test\redis-pom\customer1\src\main\java\cn\feng\dev\customer1\Application.java
