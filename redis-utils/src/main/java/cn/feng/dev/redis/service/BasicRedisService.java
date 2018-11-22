@@ -6,6 +6,7 @@
 
 package cn.feng.dev.redis.service;
 
+import javafx.beans.binding.ObjectExpression;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -360,7 +361,7 @@ public class BasicRedisService<T> {
      * @param end 结束  0 到 -1代表所有值
      * @return
      */
-    public List<Object> getList(String key, long start, long end){
+    public List<T> getList(String key, long start, long end){
         try {
             return redisTemplate.boundListOps(key).range(start, end);
         } catch (Exception e) {
@@ -404,7 +405,7 @@ public class BasicRedisService<T> {
      * @param value 值
      * @return
      */
-    public boolean pushList(String key, Object value) {
+    public boolean pushList(String key, T value) {
         try {
             redisTemplate.boundListOps(key).rightPush(value);
             return true;
@@ -421,7 +422,7 @@ public class BasicRedisService<T> {
      * @param time 时间(秒)
      * @return
      */
-    public boolean pushList(String key, Object value, long time) {
+    public boolean pushList(String key, T value, long time) {
         try {
             redisTemplate.boundListOps(key).rightPush(value);
             if (time > 0){
@@ -440,9 +441,11 @@ public class BasicRedisService<T> {
      * @param value 值
      * @return
      */
-    public boolean pushList(String key, List<Object> value) {
+    public boolean pushList(String key, List<T> value) {
         try {
-            redisTemplate.boundListOps(key).rightPushAll(value);
+            for (T t : value){
+                redisTemplate.boundListOps(key).rightPush(t);
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -457,9 +460,11 @@ public class BasicRedisService<T> {
      * @param time 时间(秒)
      * @return
      */
-    public boolean pushList(String key, List<Object> value, long time) {
+    public boolean pushList(String key, List<T> value, long time) {
         try {
-            redisTemplate.boundListOps(key).rightPushAll(value);
+            for (T t : value){
+                redisTemplate.boundListOps(key).rightPush(t);
+            }
             if (time > 0){
                 expire(key, time);
             }

@@ -30,15 +30,12 @@ public class Controller {
     Customer2Service customer2Service;
 
     @RequestMapping("/set/{key}")
-    public Customer2 cacheCustomer2(@PathVariable("key") String key){
-        Customer2 customer2 = new Customer2();
-        customer2.setId(key);
-        customer2.setScore("35");
-        return customer2Service.setCustomer2(key, customer2);
+    public Integer cacheCustomer2(@PathVariable("key") String key){
+        return customer2Service.setCustomer2(key);
     }
 
     @RequestMapping("/get/{key}")
-    public List<Object> getCustomer2(@PathVariable("key") String key){
+    public List<Customer2> getCustomer2(@PathVariable("key") String key){
         return customer2Service.getCustomer2(key);
     }
 }

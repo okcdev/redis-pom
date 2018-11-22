@@ -16,8 +16,6 @@ import org.slf4j.LoggerFactory;
 public class Customer2 {
     static Logger logger = LoggerFactory.getLogger(Customer2.class);
 
-    private String key;
-
     private String id;
 
     private String score;
@@ -25,18 +23,9 @@ public class Customer2 {
     public Customer2() {
     }
 
-    public Customer2(String key, String id, String score) {
-        this.key = key;
+    public Customer2(String id, String score) {
         this.id = id;
         this.score = score;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
     }
 
     public String getId() {
