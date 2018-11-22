@@ -360,7 +360,7 @@ public class BasicRedisService<T> {
      * @param end 结束  0 到 -1代表所有值
      * @return
      */
-    public List<Object> getList(String key, long start, long end){
+    public List<T> getList(String key, long start, long end){
         try {
             return redisTemplate.boundListOps(key).range(start, end);
         } catch (Exception e) {
@@ -440,9 +440,11 @@ public class BasicRedisService<T> {
      * @param value 值
      * @return
      */
-    public boolean pushList(String key, List<Object> value) {
+    public boolean pushListAll(String key, List<T> value) {
         try {
-            redisTemplate.boundListOps(key).rightPushAll(value);
+            for (T t : value){
+                redisTemplate.boundListOps(key).rightPush(t);
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -457,9 +459,11 @@ public class BasicRedisService<T> {
      * @param time 时间(秒)
      * @return
      */
-    public boolean pushList(String key, List<Object> value, long time) {
+    public boolean pushListAll(String key, List<T> value, long time) {
         try {
-            redisTemplate.boundListOps(key).rightPushAll(value);
+            for (T t : value){
+                redisTemplate.boundListOps(key).rightPush(t);
+            }
             if (time > 0){
                 expire(key, time);
             }

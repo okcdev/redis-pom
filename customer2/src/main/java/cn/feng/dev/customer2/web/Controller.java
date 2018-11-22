@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,15 +29,12 @@ public class Controller {
     Customer2Service customer2Service;
 
     @RequestMapping("/set/{key}")
-    public Customer2 cacheCustomer2(@PathVariable("key") String key){
-        Customer2 customer2 = new Customer2();
-        customer2.setId(key);
-        customer2.setScore("35");
-        return customer2Service.setCustomer2(key, customer2);
+    public Integer cacheCustomer2(@PathVariable("key") String key){
+        return customer2Service.setCustomer2(key);
     }
 
     @RequestMapping("/get/{key}")
-    public List<Object> getCustomer2(@PathVariable("key") String key){
+    public List<Customer2> getCustomer2(@PathVariable("key") String key){
         return customer2Service.getCustomer2(key);
     }
 }
