@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
  * @author fengtao.xue
@@ -25,12 +27,12 @@ public class Customer2Service {
     Customer2BasicRedisService customer2BasicRedisUtils;
 
     public Customer2 setCustomer2(String key, Customer2 customer2){
-        customer2BasicRedisUtils.setValueWithExpire(key, customer2, 180);
-        customer2.setKey(key);
+        //customer2BasicRedisUtils.setValueWithExpire(key, customer2, 180);
+        customer2BasicRedisUtils.pushList(key, customer2, 180);
         return customer2;
     }
 
-    public Customer2 getCustomer2(String key){
-        return customer2BasicRedisUtils.getValue(key);
+    public List<Object> getCustomer2(String key){
+        return customer2BasicRedisUtils.getList(key, 0, -1);
     }
 }

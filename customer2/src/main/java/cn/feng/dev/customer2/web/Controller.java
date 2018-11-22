@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 /**
  * @author fengtao.xue
@@ -30,13 +32,13 @@ public class Controller {
     @RequestMapping("/set/{key}")
     public Customer2 cacheCustomer2(@PathVariable("key") String key){
         Customer2 customer2 = new Customer2();
-        customer2.setId("123");
+        customer2.setId(key);
         customer2.setScore("35");
         return customer2Service.setCustomer2(key, customer2);
     }
 
     @RequestMapping("/get/{key}")
-    public Customer2 getCustomer2(@PathVariable("key") String key){
+    public List<Object> getCustomer2(@PathVariable("key") String key){
         return customer2Service.getCustomer2(key);
     }
 }
